@@ -1,0 +1,25 @@
+/**
+    ERROR
+**/
+.error-container {
+	background-color: #fafafa;
+	padding: 10px;	
+	border: 1px solid #b3b3b3;
+	border-radius: 4px;
+}
+	.error-container h2 {
+		color: #C24D4D;
+		width: 98%;
+		background-color: #E8C053;
+		border-radius: 4px;
+		padding: 1%;
+		text-align: center;
+		font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+	}
+	.error-container h3 {
+		font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.error-container .more-info {
+	}
