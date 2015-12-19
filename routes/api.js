@@ -81,6 +81,7 @@ router.get('/getallphones', function( req, res, next ) {
 		telefoni.push({
 			'manufacturer': manufactorer,
 			'name': name,
+			'slug': manufactorer.replace(/\s/g, '-').trim().toLowerCase() + '-' + name.replace(/\s/g, '-').trim().toLowerCase(),
 			'weight': weight,
 			'dimensions': dimensions,
 			'processor': processor,

@@ -21,53 +21,8 @@
 		</div>
 	</div>
 </div>
-<div class="container results col-md-12 col-sm-12 col-xs-12 hidden">
-	<div class="result col-md-12 col-sm-12 col-xs-12" ng-repeat="phone in mobileList.mobilePhones.data">
-		<div class="description photo col-md-3 col-sm-3 col-xs-3">
-			<img src="/images/phone-main/{{ phone.mainImage }}" alt="Mobile Image {{ phone.mainImage }}">
-		</div>
-		<div class="description col-md-6 col-sm-6 col-xs-6">
-			<h2>{{ phone.manufacturer }} <small>{{ phone.name }}</small></h2>
-			<div class="description-inner col-md-6 col-sm-12 col-xs-12">
-				<!--p>Težina:<small>{{ phone.weight }}g</small></p>
-				<p>Dimenzije:<small>{{ phone.dimensions }}mm</small></p>
-				<p>Rezolucija:<small>{{ phone.resolution }}px</small></p-->
-				<table border="1">
-					<tr>
-						<td class="col-md-6 col-sm-6 col-xs-6">Težina</td>
-						<td class="col-md-6 col-sm-6 col-xs-6">{{ phone.weight }}g</td>
-					</tr>
-					<tr>
-						<td class="col-md-6 col-sm-6 col-xs-6">Dimenzije</td>
-						<td class="col-md-6 col-sm-6 col-xs-6">{{ phone.dimensions }}mm</td>
-					</tr>
-					<tr>
-						<td class="col-md-6 col-sm-6 col-xs-6">Rezolucija</td>
-						<td class="col-md-6 col-sm-6 col-xs-6">{{ phone.resolution }}px</td>
-					</tr>
-				</table>
-			</div>
-			<div class="description-inner col-md-6 col-sm-12 col-xs-12">
-				<table border="1">
-					<tr>
-						<td class="col-md-6 col-sm-6 col-xs-6">Procesor</td>
-						<td class="col-md-6 col-sm-6 col-xs-6">{{ phone.processor }}</td>
-					</tr>
-					<tr>
-						<td class="col-md-6 col-sm-6 col-xs-6">Operativni Sistem</td>
-						<td class="col-md-6 col-sm-6 col-xs-6">{{ phone.os + ' ' + phone.version }}</td>
-					</tr>
-					<tr>
-						<td class="col-md-6 col-sm-6 col-xs-6">RAM/HDD</td>
-						<td class="col-md-6 col-sm-6 col-xs-6">{{ phone.ram }}MB/{{ phone.hdd }}MB</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<div class="description col-md-3 col-sm-3 col-xs-3">
-			<button class="vise-detalja btn btn-default">Pogledajte više</button>
-		</div>
-	</div><!-- /result -->
+<div ng-view>
+	<!-- angular-view -->
 </div>
 
 <script type="text/javascript">
@@ -77,10 +32,6 @@ $(function() {
 	var productInput = document.getElementById('product');
 
 	var DomManipulation = {
-		/**
-		 * Toggluje nevidljivost DOM elementa uz animaciju
-		 * @param  {DOM element koji se toggluje}
-		 */
 		toggleExtraInfo: function( item ) {
 			if (item.classList.contains('shrinked'))
 				item.classList.add('shrinked');
@@ -89,17 +40,13 @@ $(function() {
 			item.classList.toggle('up');
 			item.classList.toggle('down');
 		},
-		/**
-		 * @param  {DOM element sa Glyphicon klasom}
-		 * @return {vraca null (false) vrednost ukoliko dodeljeni DOM element nema glyphicon klasu}
-		 */
 		rotateGlyphicon: function( glyph ) {
 			if (! glyph.classList.contains('glyphicon')) {
 				console.error('Glyphicon missing!');
 				return;
 			}
 			glyph.classList.toggle('rotated');
-		},
+		}
 	};
 
 	$('.search-box').offset({

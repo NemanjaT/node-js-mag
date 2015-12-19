@@ -50,11 +50,11 @@ body {
 		animation-iteration-count: 1;
 	}
 	.result {
-		border 1px solid #CECECE;
+		border: 1px solid #CECECE;
 		box-shadow: 0 0 2px #90CFD7;
 		margin: 20px 0;
 		padding: 5%;
-		display: ;
+		display: flex;
 	}
 		.description.photo {
 			text-align: center;
@@ -62,6 +62,12 @@ body {
 			.description.photo img {
 				max-width: 100%;
 			}
+			.description-inner table {
+				width: 100%;
+			}
+				.description-inner table tr {
+					border-bottom: 1px solid #888888;
+				}
 
 	.btn.btn-default.vise-detalja {
 		border-radius: 0;
