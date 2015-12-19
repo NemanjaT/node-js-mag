@@ -60,6 +60,7 @@ $(function() {
 
 	productInput.addEventListener('keypress', function(e) {
 		if(e.which == 13) {
+            window.location.hash = '';
 			$('.search-box')[0].style.top = 0;
 			$('.search-box')[0].addEventListener('transitionend', function() {
 				$('.container')[0].classList.remove('hidden');

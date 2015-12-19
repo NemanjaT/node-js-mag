@@ -40,5 +40,5 @@
 			this.getUrl = function() {
 				return $location.url();
 			}
-		}])
+		}]);
 })();
