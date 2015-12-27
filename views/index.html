@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/angular/angular.min.js"></script>
 </head>
 <body ng-app="eCommerceApp">
 <h1>Welcome to the jungle!</h1>
 <div id="search-box" ng-controller="searchBoxController as sb">
     <div class="row">
-        <input type="text" class="form-control" placeholder="eg. Samsung Galaxy S4"
+        <input type="text" class="form-control" placeholder="npr. Samsung Galaxy S4"
                ng-model="searchPhoneValue" />
     </div>
-    <div class="row"></div>
-    <div class="row"></div>
+    <div class="row">
+        <input type="text" class="form-control" placeholder="npr. Beograd"
+               ng-model="storeCityValue" />
+    </div>
+    <div class="row">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+    </div>
     <div class="row"></div>
     <div class="row">
 
