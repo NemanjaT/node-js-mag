@@ -11,8 +11,8 @@ var users        = require('./routes/users');
 
 var app          = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// view engine setup - turned off because of unnecesarity.
+//app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
@@ -22,6 +22,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.use('/api', api);
 app.use('/', routes);
@@ -43,7 +45,7 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.render('error/error', {
       message: err.message,
-      error: err,
+      error: err
     });
   });
 }
@@ -54,7 +56,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error/error', {
     message: {},
-    error: {},
+    error: {}
   });
 });
 
