@@ -3,31 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Mobile Store</title>
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style-mobile.css">
+
+    <!-- Standardne biblioteke -->
     <script src="/jquery/dist/jquery.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/angular/angular.min.js"></script>
+    <script src="/angular-route/angular-route.min.js"></script>
+
+    <!-- Custom JS skripte -->
+    <script src="/js/script.js"></script>
+
+    <!-- Angular fajlovi -->
+    <script src="/ang/app.js"></script>
+    <script src="/ang/controllers/searchBoxController.js"></script>
 </head>
-<body ng-app="eCommerceApp">
-<h1>Welcome to the jungle!</h1>
-<div id="search-box" ng-controller="searchBoxController as sb">
+<body ng-app="cmscApp">
+<div id="search-box" class="col-md-12 col-sm-12 col-xs-12" ng-controller="searchBoxController as sb">
     <div class="row">
         <input type="text" class="form-control" placeholder="npr. Samsung Galaxy S4"
-               ng-model="searchPhoneValue" />
-    </div>
+               ng-model="searchPhoneValue" ng-keypress="sb.submitUrl($event, '/')"
+               autofocus />
+    </div><!-- /.row -->
     <div class="row">
         <input type="text" class="form-control" placeholder="npr. Beograd"
                ng-model="storeCityValue" />
-    </div>
+    </div><!-- /.row -->
     <div class="row">
-        <span class="glyphicon glyphicon-chevron-down"></span>
-    </div>
-    <div class="row"></div>
-    <div class="row">
-
-    </div>
-</div>
+        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+    </div><!-- /.row -->
+    <div class="row hidden">
+        <div class="row">
+            Od: <input type="text" class="form-control small" placeholder="0"
+                       ng-model="fromPriceValue" />
+            do <input type="text" class="form-control small" placeholder="999"
+                      ng-model="toPriceValue" />
+        </div><!-- /.row -->
+        <div class="row">
+            <p>Mora imati sliku: <input type="radio" class="form-control small"
+                                        ng-model="needsImageValue" /></p>
+        </div><!-- /.row -->
+    </div><!-- /.row.hidden -->
+</div><!-- /#search-box -->
 </body>
 </html>
