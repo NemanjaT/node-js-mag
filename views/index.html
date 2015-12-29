@@ -19,13 +19,15 @@
 
     <!-- Angular fajlovi -->
     <script src="/ang/app.js"></script>
+    <script src="/ang/config/routeConfig.js"></script>
     <script src="/ang/controllers/searchBoxController.js"></script>
+    <script src="/ang/controllers/listPhoneController.js"></script>
 </head>
 <body ng-app="cmscApp">
-<div id="search-box" class="col-md-12 col-sm-12 col-xs-12" ng-controller="searchBoxController as sb">
+<div id="search-box" class="col-md-12 col-sm-12 col-xs-12" ng-controller="searchBoxController as sbc">
     <div class="row">
         <input type="text" class="form-control" placeholder="npr. Samsung Galaxy S4"
-               ng-model="searchPhoneValue" ng-keypress="sb.submitUrl($event, '/')"
+               ng-model="searchPhoneValue" ng-keypress="sbc.submitUrl($event, '/')"
                autofocus />
     </div><!-- /.row -->
     <div class="row">
@@ -33,9 +35,9 @@
                ng-model="storeCityValue" />
     </div><!-- /.row -->
     <div class="row">
-        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+        <span id="more-info-btn" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
     </div><!-- /.row -->
-    <div class="row hidden">
+    <div id="search-more-info" class="row hidden col-md-12 col-sm-12 col-xs-12">
         <div class="row">
             Od: <input type="text" class="form-control small" placeholder="0"
                        ng-model="fromPriceValue" />
@@ -43,10 +45,13 @@
                       ng-model="toPriceValue" />
         </div><!-- /.row -->
         <div class="row">
-            <p>Mora imati sliku: <input type="radio" class="form-control small"
+            <p>Mora imati sliku: <input type="radio"
                                         ng-model="needsImageValue" /></p>
         </div><!-- /.row -->
     </div><!-- /.row.hidden -->
 </div><!-- /#search-box -->
+<div ng-view>
+    <!-- angular-view -->
+</div>
 </body>
 </html>

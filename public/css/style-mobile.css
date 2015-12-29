@@ -1,0 +1,18 @@
+#more-info-btn {
+    transition: transform .3s;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+#search-more-info {
+    transition: height .5s;
+}
+    .hidden {
+        height: 0;
+    }
+
+    .shown {
+        height: 100px
+    }
