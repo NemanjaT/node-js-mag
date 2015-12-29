@@ -22,6 +22,7 @@
     <script src="/ang/config/routeConfig.js"></script>
     <script src="/ang/controllers/searchBoxController.js"></script>
     <script src="/ang/controllers/listPhoneController.js"></script>
+    <script src="/ang/controllers/detailPhoneController.js"></script>
 </head>
 <body ng-app="cmscApp">
 <div id="search-box" class="col-md-12 col-sm-12 col-xs-12" ng-controller="searchBoxController as sbc">
@@ -39,14 +40,14 @@
     </div><!-- /.row -->
     <div id="search-more-info" class="row hidden col-md-12 col-sm-12 col-xs-12">
         <div class="row">
-            Od: <input type="text" class="form-control small" placeholder="0"
-                       ng-model="fromPriceValue" />
-            do <input type="text" class="form-control small" placeholder="999"
-                      ng-model="toPriceValue" />
+            <label for="price-from">Od</label> <input id="price-from" type="text" class="form-control small" placeholder="0"
+                                                      ng-model="fromPriceValue" ng-keypress="sbc.submitUrl($event, '/')" />
+            <label for="price-to">do</label> <input id="price-to" type="text" class="form-control small" placeholder="999"
+                                                    ng-model="toPriceValue" ng-keypress="sbc.submitUrl($event, '/')" />
         </div><!-- /.row -->
         <div class="row">
-            <p>Mora imati sliku: <input type="radio"
-                                        ng-model="needsImageValue" /></p>
+            <p><label class="checkbox-inline"><input type="checkbox" class="checkbox"
+                                                     ng-model="needsImageValue" />Mora imati sliku</label></p>
         </div><!-- /.row -->
     </div><!-- /.row.hidden -->
 </div><!-- /#search-box -->

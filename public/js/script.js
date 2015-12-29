@@ -13,4 +13,13 @@ $(function() {
             moreInfoBtn.classList.remove('rotated');
         }
     });
+
+    var triggerEvent = function(e) {
+        if(e.which == 13) {
+            //podigni meni.
+        }
+    };
+
+
+
 });

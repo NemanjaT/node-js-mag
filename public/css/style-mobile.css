@@ -1,18 +1,25 @@
-#more-info-btn {
-    transition: transform .3s;
+#search-box {
+    background-color: red;
+    padding: 2% 5%;
 }
-
-.rotated {
-    transform: rotate(180deg);
-}
-
-#search-more-info {
-    transition: height .5s;
-}
-    .hidden {
+    #search-box input {
+        margin-bottom: 2%;
+    }
+    .rotated {
+        transform: rotate(180deg);
+    }
+    #more-info-btn {
+        transition: transform .3s;
+    }
+    #search-more-info {
+        transition: height 2s;
+        overflow: hidden;
         height: 0;
     }
-
-    .shown {
-        height: 100px
-    }
+        #search-more-info.shown {
+            height: 3%;
+        }
+        .form-control.small {
+            width: 30%;
+            display: inline-block;
+        }
