@@ -4,6 +4,8 @@ var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
+var mongoose     = require('mongoose');
+var fs           = require('fs');
 
 var routes       = require('./routes/index');
 var api          = require('./routes/api');
@@ -14,8 +16,6 @@ var app          = express();
 // view engine setup - turned off because of unnecesarity.
 //app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-//app.set('view options', { layout: false });
-//app.engine('html', require('ejs').renderFile);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,6 +26,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
+fs.readdirSync(__dirname + '/models').forEach(function(filename) {
+    if(~filename.indexOf('.js'))
+      require(__dirname + '/models/' + filename);
+});
+
+mongoose.connect('mongodb://localhost/test');
 
 app.use('/api', api);
 app.use('/', routes);

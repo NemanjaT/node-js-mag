@@ -1,9 +1,9 @@
 <div class="container ">
-    <h3 ng-show="errorMsg">{{ errorMsg }}</h3>
     <div id="results" class="col-md-12 col-sm-12 col-xs-12">
+        <h3 ng-show="errorMsg">{{ errorMsg }}</h3>
         <div class="result" ng-repeat="phone in phoneList">
-            <div class="column main-image">
-                <img src="/images/main/{{ phone.mainImage }}" alt="{{ phone.mainImage }}" />
+            <div class="column main-image" ng-init="image = phone.mainImage == '' ? 'no-photo.jpg' : phone.mainImage">
+                <img src="/images/main/{{ image }}" alt="{{ image }}" />
             </div>
             <div class="column info">
                 <h2>{{ phone.manufacturer }} <small>{{ phone.name }}</small></h2>
@@ -43,6 +43,7 @@
                     <img src="/images/extra/star-filled.png" alt="star-filled">
                     <img src="/images/extra/star-filled.png" alt="star-filled">
                 </div>
+                <h3>{{ phone.price }}&euro;</h3>
             </div>
         </div>
     </div>

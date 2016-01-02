@@ -39,9 +39,16 @@
         .info {
             width: 60%;
         }
+            .info table tr {
+                border-bottom: 1px solid #ABABAB;
+                margin: 5px 0;
+            }
         .extra {
             width: 20%;
         }
+            .extra a {
+                margin-top: 100%;
+            }
             .grade > img {
                 max-width: 14%;
             }
