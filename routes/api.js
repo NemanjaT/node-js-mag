@@ -6,8 +6,7 @@ router.get('*', function( req, res, next )  {
 	if (req.xhr || req.headers.accept.indexOf('json') > -1) {
 		next();
 	} else {
-		next();
-		error = [];
+		var error = [];
 		error.status = 500;
 		res.status(500).send({
 			error: error,
@@ -18,7 +17,7 @@ router.get('*', function( req, res, next )  {
 	}
 });
 
-router.get('/getallphones', function( req, res, next ) {
+router.get('/getallphones', function( req, res ) {
 	var telefoni = [];
 	/**
 	 * BEGIN TEMP
@@ -32,7 +31,7 @@ router.get('/getallphones', function( req, res, next ) {
 		'sony-xperia-z5-premium.jpg',
 		'xiaomi-mi-4c.jpg',
 		'lg-nexus-5x-16gb.jpg',
-		'',
+		''
 	];
 	function getRandomString(minChar, maxChar, withSpaces) {
 		withSpaces = withSpaces || false;
@@ -41,7 +40,7 @@ router.get('/getallphones', function( req, res, next ) {
 		var possible = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
 		var string = "";
 		for(var i = 0; i < Math.floor(Math.random() * (Math.floor(maxChar - minChar)) + minChar); i++) {
-			string += possible.charAt(Math.floor(Math.random() * possible.length))
+			string += possible.charAt(Math.floor(Math.random() * possible.length));
 			if(withSpaces && Math.floor(Math.random() * 5) == 2) {
 				string += ' ';
 
@@ -98,7 +97,7 @@ router.get('/getallphones', function( req, res, next ) {
 			'hdd': hdd,
 			'os': os,
 			'version': version,
-			'mainImage': mainImage,
+			'mainImage': mainImage
 		});
 	}
 	/**

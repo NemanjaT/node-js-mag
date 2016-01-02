@@ -23,3 +23,25 @@
             width: 30%;
             display: inline-block;
         }
+#results {
+
+}
+    .result {
+        display: flex;
+    }
+        .main-image {
+            width: 20%;
+        }
+            .main-image > img {
+                padding-top: 2em;
+                max-width: 100%;
+            }
+        .info {
+            width: 60%;
+        }
+        .extra {
+            width: 20%;
+        }
+            .grade > img {
+                max-width: 14%;
+            }
