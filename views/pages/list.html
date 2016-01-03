@@ -1,7 +1,9 @@
-<div class="container ">
+<div class="container hidden">
     <div id="results" class="col-md-12 col-sm-12 col-xs-12">
         <h3 ng-show="errorMsg">{{ errorMsg }}</h3>
-        <div class="result" ng-repeat="phone in phoneList | hasImageFilter:listInfo.imageRequired">
+        <div class="result" ng-repeat="phone in phoneList | hasImageFilter:listInfo.imageRequired
+                                                          | nameFilter:listInfo.phoneName
+                                                          | priceFilter:listInfo.price.from:listInfo.price.to">
             <div class="column main-image" ng-init="image = phone.mainImage == '' ? 'no-photo.jpg' : phone.mainImage">
                 <img src="/images/main/{{ image }}" alt="{{ image }}" />
             </div>

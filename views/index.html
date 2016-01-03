@@ -21,6 +21,8 @@
     <script src="/ang/app.js"></script>
     <script src="/ang/config/routeConfig.js"></script>
     <script src="/ang/filters/hasImageFilter.js"></script>
+    <script src="/ang/filters/nameFilter.js"></script>
+    <script src="/ang/filters/priceFilter.js"></script>
     <script src="/ang/factories/searchBoxFactory.js"></script>
     <script src="/ang/controllers/searchBoxController.js"></script>
     <script src="/ang/controllers/listPhoneController.js"></script>
@@ -29,8 +31,8 @@
 <body ng-app="cmscApp">
 <div id="search-box" class="col-md-12 col-sm-12 col-xs-12" ng-controller="searchBoxController as sbc">
     <div class="row">
-        <input type="text" class="form-control" placeholder="npr. Samsung Galaxy S4"
-               ng-model="searchPhoneValue" ng-keypress="sbc.submitUrl($event, '/')"
+        <input type="text" class="form-control" placeholder="npr. Samsung Galaxy S4" id="phoneName"
+               ng-model="searchInfo.phoneName" ng-keypress="sbc.submitUrl($event, '/')"
                autofocus />
     </div><!-- /.row -->
     <div class="row">
@@ -43,9 +45,9 @@
     <div id="search-more-info" class="row hidden col-md-12 col-sm-12 col-xs-12">
         <div class="row">
             <label for="price-from">Od</label> <input id="price-from" type="number" class="form-control small" placeholder="0"
-                                                      ng-model="fromPriceValue" ng-keypress="sbc.submitUrl($event, '/')" />
+                                                      ng-model="searchInfo.price.from" ng-keypress="sbc.submitUrl($event, '/')" />
             <label for="price-to">do</label> <input id="price-to" type="number" class="form-control small" placeholder="999"
-                                                    ng-model="toPriceValue" ng-keypress="sbc.submitUrl($event, '/')" />
+                                                    ng-model="searchInfo.price.to" ng-keypress="sbc.submitUrl($event, '/')" />
         </div><!-- /.row -->
         <div class="row">
             <p><label class="checkbox-inline"><input type="checkbox" class="checkbox"

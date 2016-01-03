@@ -4,7 +4,7 @@ angular.module('cmscApp').factory('searchBoxFactory', function() {
         imageRequired: false,
         price: {
             from: 0,
-            to: Number.MAX_VALUE
+            to: null
         }
     };
 });

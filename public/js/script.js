@@ -1,6 +1,7 @@
 $(function() {
     var moreInfoBtn = document.getElementById('more-info-btn');
     var searchMoreInfo = document.getElementById('search-more-info');
+    var phoneNameTxt = document.getElementById('phoneName');
 
     moreInfoBtn.addEventListener('click', function() {
         if (searchMoreInfo.classList.contains('hidden')) {
@@ -14,12 +15,11 @@ $(function() {
         }
     });
 
-    var triggerEvent = function(e) {
-        if(e.which == 13) {
-            //podigni meni.
+    phoneNameTxt.addEventListener('keypress', function() {
+        var mainContainer = $('.container')[0];
+        if(mainContainer.classList.contains('hidden')) {
+            mainContainer.classList.remove('hidden');
         }
-    };
-
-
+    });
 
 });
