@@ -1,3 +1,9 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 #search-box {
     background-color: red;
     padding: 2% 5%;
@@ -24,7 +30,8 @@
             display: inline-block;
         }
 #results {
-    margin-top: 20px;
+    background-color: white;
+    padding-top: 20px;
 }
     .result {
         display: flex;
@@ -59,3 +66,19 @@
             .grade > img {
                 max-width: 10%;
             }
+#details {
+    background-color: white;
+}
+    .small-info {
+        width: 20%;
+        float: left;
+    }
+        .small-info img {
+            max-width: 100%;
+        }
+    .main-info {
+        float: left;
+    }
+    .clear {
+        clear: both;
+    }

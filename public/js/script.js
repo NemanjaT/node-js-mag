@@ -1,9 +1,11 @@
 $(function() {
-    var searchBox = document.getElementById('search-box');
     var moreInfoBtn = document.getElementById('more-info-btn');
     var searchMoreInfo = document.getElementById('search-more-info');
     var phoneNameTxt = document.getElementById('phoneName');
     var searched = false;
+
+    if(location.href.split('/')[3] != '')
+        searched = true;
 
     var jSearchBox = function(query) {
         this.searchBox = $(query);
@@ -16,7 +18,8 @@ $(function() {
     };
 
     var jsb = new jSearchBox('#search-box');
-    jsb.goToMiddle();
+    if(!searched)
+        jsb.goToMiddle();
 
     window.onresize = function() {
         if(!searched) {

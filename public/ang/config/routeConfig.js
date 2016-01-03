@@ -5,7 +5,7 @@ angular.module('cmscApp').config(function ($routeProvider, $locationProvider) {
             controller: 'listPhoneController',
             controllerAs: 'lpc'
         })
-        .when('/:phone', {
+        .when('/:phoneSlug', {
             templateUrl: '/pages/detail.html',
             controller: 'detailPhoneController',
             controllerAs: 'dpc'

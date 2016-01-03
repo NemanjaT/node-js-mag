@@ -1,8 +1,92 @@
 <div class="container">
-    <h1>detail view</h1>
-    <h3 ng-show="errorMsg">{{ errorMsg }}</h3>
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <a ng-href="/">link to list</a>
+    <div id="details">
+        <div class="small-info" ng-init="image = detailInfo.mainImage == '' ? 'no-photo.jpg' : detailInfo.mainImage">
+            <img src="/images/main/{{ detailInfo.mainImage || 'no-photo.jpg' }}" alt="{{ detailInfo.mainImage || 'no-photo.jpg' }}" />
+            <a ng-href="/">Nazad</a>
+        </div>
+        <div class="main-info">
+            <h1>{{ detailInfo.manufacturer }} <small>{{ detailInfo.name }}</small></h1>
+            <table>
+                <tr>
+                    <th colspan="2">Osnovne informacije</th>
+                </tr>
+                <tr>
+                    <td>Težina:</td>
+                    <td>{{ detailInfo.weight }}g</td>
+                </tr>
+                <tr>
+                    <td>Dimenzije:</td>
+                    <td>{{ detailInfo.dimensions }}mm</td>
+                </tr>
+                <tr>
+                    <td>Rezolucija:</td>
+                    <td>{{ detailInfo.resolution }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Hardverske informacije</th>
+                </tr>
+                <tr>
+                    <td>Procesor:</td>
+                    <td>{{ detailInfo.processor }}</td>
+                </tr>
+                <tr>
+                    <td>Baterija:</td>
+                    <td>{{ detailInfo.battery }}</td>
+                </tr>
+                <tr>
+                    <td>RAM memorija:</td>
+                    <td>{{ detailInfo.componentInfo.ram }}</td>
+                </tr>
+                <tr>
+                    <td>Trajna memorija:</td>
+                    <td>{{ detailInfo.componentInfo.hdd }}</td>
+                </tr>
+                <tr>
+                    <td>Veličina ekrana:</td>
+                    <td>{{ detailInfo.screenSize }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Kamera:</th>
+                </tr>
+                <tr>
+                    <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Zadnja kamera:</th>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Rezolucija:</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.backCamera.pixel }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Slika:</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.backCamera.resolution }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Video:</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.backCamera.video }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Prednja kamera:</th>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Rezolucija:</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.frontCamera.pixel }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Slika:</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.frontCamera.resolution }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Video:</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.frontCamera.video }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Softver:</th>
+                </tr>
+                <tr>
+                    <td>Operativni sistem:</td>
+                    <td>{{ detailInfo.componentInfo.os }} {{ detailInfo.componentInfo.osVersion }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear"></div>
     </div>
-    {{ detailInfo.manufacturer }}
 </div>

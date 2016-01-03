@@ -38,10 +38,9 @@ router.get('/getphone/:phoneSlug', function( req, res ) {
 		slug: req.params.phoneSlug
 	}, function(err, person) {
 		if(!err) {
-			console.log(person);
 			res.send(JSON.stringify(person));
 		} else {
-			console.log(err);
+			res.send(err);
 		}
 	});
 });
