@@ -1,5 +1,5 @@
 <div class="container">
-    <div id="details">
+    <div id="details" ng-show="detailInfo.manufacturer">
         <div class="small-info" ng-init="image = detailInfo.mainImage == '' ? 'no-photo.jpg' : detailInfo.mainImage">
             <img src="/images/main/{{ detailInfo.mainImage || 'no-photo.jpg' }}" alt="{{ detailInfo.mainImage || 'no-photo.jpg' }}" />
             <a ng-href="/">Nazad</a>
@@ -86,6 +86,9 @@
                     <td>{{ detailInfo.componentInfo.os }} {{ detailInfo.componentInfo.osVersion }}</td>
                 </tr>
             </table>
+        </div>
+        <div ng-show="detailInfo.manufacturer == undefined" id="error-details">
+            <h1>Žao nam je, ali nemamo informacije vezane za zadati telefon.</h1>
         </div>
         <div class="clear"></div>
     </div>

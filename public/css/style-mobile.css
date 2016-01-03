@@ -82,3 +82,6 @@ body {
     .clear {
         clear: both;
     }
+#error-details {
+    background-color: white;
+}
