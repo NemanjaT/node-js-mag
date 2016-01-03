@@ -20,6 +20,8 @@
     <!-- Angular fajlovi -->
     <script src="/ang/app.js"></script>
     <script src="/ang/config/routeConfig.js"></script>
+    <script src="/ang/filters/hasImageFilter.js"></script>
+    <script src="/ang/factories/searchBoxFactory.js"></script>
     <script src="/ang/controllers/searchBoxController.js"></script>
     <script src="/ang/controllers/listPhoneController.js"></script>
     <script src="/ang/controllers/detailPhoneController.js"></script>
@@ -47,7 +49,7 @@
         </div><!-- /.row -->
         <div class="row">
             <p><label class="checkbox-inline"><input type="checkbox" class="checkbox"
-                                                     ng-model="needsImageValue" />Mora imati sliku</label></p>
+                                                     ng-model="searchInfo.imageRequired" />Mora imati sliku</label></p>
         </div><!-- /.row -->
     </div><!-- /.row.hidden -->
 </div><!-- /#search-box -->

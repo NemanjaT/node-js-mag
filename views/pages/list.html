@@ -1,7 +1,7 @@
 <div class="container ">
     <div id="results" class="col-md-12 col-sm-12 col-xs-12">
         <h3 ng-show="errorMsg">{{ errorMsg }}</h3>
-        <div class="result" ng-repeat="phone in phoneList">
+        <div class="result" ng-repeat="phone in phoneList | hasImageFilter:listInfo.imageRequired">
             <div class="column main-image" ng-init="image = phone.mainImage == '' ? 'no-photo.jpg' : phone.mainImage">
                 <img src="/images/main/{{ image }}" alt="{{ image }}" />
             </div>
@@ -10,27 +10,27 @@
                 <table>
                     <tr>
                         <td>Procesor:</td>
-                        <td>{{ phone.processor }}</td>
+                        <td>{{ phone.basicInfo.processor }}</td>
                     </tr>
                     <tr>
                         <td>Baterija:</td>
-                        <td>{{ phone.battery }}</td>
+                        <td>{{ phone.basicInfo.battery }}</td>
                     </tr>
                     <tr>
                         <td>Rezolucija:</td>
-                        <td>{{ phone.resolution }}</td>
+                        <td>{{ phone.basicInfo.resolution }}</td>
                     </tr>
                     <tr>
                         <td>Veličina ekrana:</td>
-                        <td>{{ phone.screenSize }} inča</td>
+                        <td>{{ phone.basicInfo.screenSize }} inča</td>
                     </tr>
                     <tr>
                         <td>RAM memorija:</td>
-                        <td>{{ phone.ram }}MB</td>
+                        <td>{{ phone.componentInfo.ram }}MB</td>
                     </tr>
                     <tr>
                         <td>Operativni sistem:</td>
-                        <td>{{ phone.os }} {{ phone.version }}</td>
+                        <td>{{ phone.componentInfo.os }} {{ phone.componentInfo.version }}</td>
                     </tr>
                 </table>
             </div>

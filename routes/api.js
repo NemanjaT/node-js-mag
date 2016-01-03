@@ -122,42 +122,19 @@ router.get('/getallphones', function( req, res ) {
 		res.send(JSON.stringify(products));
 	});
 	var products = mongoose.model('products');
-	var product = new products({
-		manufacturer: 'LG',
-		name: 'Nexus 5X 16GB',
-		slug: 'lg-nexus-5x-16gb',
-		basicInfo: {
-			weight: 150,
-			dimensions: '1x1x1',
-			resolution: '2x2x2',
-			processor: 'quad-core cortex a56 3215mhz',
-			battery: 'baterija 3000mah',
-			screenSize: 5
-		},
-		backCamera: {
-			pixel: 10,
-			resolution: '4000x3000',
-			video: '3000x2000'
-		},
-		frontCamera: {
-			pixel: 5,
-			resolution: '',
-			video: ''
-		},
-		componentInfo: {
-			ram: 3000,
-			hdd: 16000,
-			os: 'android',
-			osVersion: 'v5.1'
-		},
-		mainImage: 'lg-nexus-5x-16gb.jpg',
-		price: 300
-	});
-	/*product.save(function(err) {
+	/*product7.save(function(err) {
 		console.log('attempting');
 		if(!err) {
-			console.log('did');
-			res.send(null);
+			console.log('did1');
+			product8.save(function(err) {
+				console.log('attempting');
+				if(!err) {
+					console.log('did1');
+					res.send('');
+				} else {
+					console.log(err);
+				}
+			});
 		} else {
 			console.log(err);
 		}
