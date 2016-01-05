@@ -1,10 +1,10 @@
 <div class="container">
     <div id="details" ng-show="detailInfo.manufacturer">
-        <div class="small-info" ng-init="image = detailInfo.mainImage == '' ? 'no-photo.jpg' : detailInfo.mainImage">
+        <div class="small-info col-md-4 col-sm-4 col-xs-4" ng-init="image = detailInfo.mainImage == '' ? 'no-photo.jpg' : detailInfo.mainImage">
             <img src="/images/main/{{ detailInfo.mainImage || 'no-photo.jpg' }}" alt="{{ detailInfo.mainImage || 'no-photo.jpg' }}" />
             <a ng-href="/">Nazad</a>
         </div>
-        <div class="main-info">
+        <div class="main-info col-md-8 col-sm-8 col-xs-8">
             <h1>{{ detailInfo.manufacturer }} <small>{{ detailInfo.name }}</small></h1>
             <table>
                 <tr>
@@ -12,26 +12,26 @@
                 </tr>
                 <tr>
                     <td>Težina:</td>
-                    <td>{{ detailInfo.weight }}g</td>
+                    <td>{{ detailInfo.basicInfo.weight }}g</td>
                 </tr>
                 <tr>
                     <td>Dimenzije:</td>
-                    <td>{{ detailInfo.dimensions }}mm</td>
+                    <td>{{ detailInfo.basicInfo.dimensions }}mm</td>
                 </tr>
                 <tr>
                     <td>Rezolucija:</td>
-                    <td>{{ detailInfo.resolution }}</td>
+                    <td>{{ detailInfo.basicInfo.resolution }}</td>
                 </tr>
                 <tr>
                     <th colspan="2">Hardverske informacije</th>
                 </tr>
                 <tr>
                     <td>Procesor:</td>
-                    <td>{{ detailInfo.processor }}</td>
+                    <td>{{ detailInfo.basicInfo.processor }}</td>
                 </tr>
                 <tr>
                     <td>Baterija:</td>
-                    <td>{{ detailInfo.battery }}</td>
+                    <td>{{ detailInfo.basicInfo.battery }}</td>
                 </tr>
                 <tr>
                     <td>RAM memorija:</td>
@@ -53,30 +53,30 @@
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;Rezolucija:</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.backCamera.pixel }}</td>
+                    <td>{{ detailInfo.backCamera.pixel }}</td>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;Slika:</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.backCamera.resolution }}</td>
+                    <td>{{ detailInfo.backCamera.resolution }}</td>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;Video:</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.backCamera.video }}</td>
+                    <td>{{ detailInfo.backCamera.video }}</td>
                 </tr>
                 <tr>
                     <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Prednja kamera:</th>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;Rezolucija:</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.frontCamera.pixel }}</td>
+                    <td>{{ detailInfo.frontCamera.pixel }}</td>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;Slika:</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.frontCamera.resolution }}</td>
+                    <td>{{ detailInfo.frontCamera.resolution }}</td>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;Video:</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ detailInfo.frontCamera.video }}</td>
+                    <td>{{ detailInfo.frontCamera.video }}</td>
                 </tr>
                 <tr>
                     <th colspan="2">Softver:</th>

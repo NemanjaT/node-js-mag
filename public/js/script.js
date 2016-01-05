@@ -2,10 +2,13 @@ $(function() {
     var moreInfoBtn = document.getElementById('more-info-btn');
     var searchMoreInfo = document.getElementById('search-more-info');
     var phoneNameTxt = document.getElementById('phoneName');
-    var searched = false;
+    var mainContainer = $('.container')[0];
+    searched = false;
 
-    if(location.href.split('/')[3] != '')
+    //ukoliko je pocetna lokacija browser-a sajt.com/neki-parametar
+    if(location.href.split('/')[3] != '') {
         searched = true;
+    }
 
     var jSearchBox = function(query) {
         this.searchBox = $(query);
@@ -18,8 +21,9 @@ $(function() {
     };
 
     var jsb = new jSearchBox('#search-box');
-    if(!searched)
+    if(!searched) {
         jsb.goToMiddle();
+    }
 
     window.onresize = function() {
         if(!searched) {
@@ -44,8 +48,8 @@ $(function() {
         if(mainContainer.classList.contains('hidden')) {
             mainContainer.classList.remove('hidden');
             jsb.goToTop();
-            searched = true;
         }
+        searched = true;
     });
 
 });

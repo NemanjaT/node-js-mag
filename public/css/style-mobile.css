@@ -5,7 +5,7 @@ body {
     background-size: cover;
 }
 #search-box {
-    background-color: red;
+    background-color: #7E8496;
     padding: 2% 5%;
 }
     #search-box input {
@@ -57,6 +57,13 @@ body {
                 border-bottom: 1px solid #ABABAB;
                 margin: 5px 0;
             }
+                .info table tr td {
+                    padding: 1%;
+                }
+                .info table tr td:first-child {
+                    border-right: 1px solid rgba(181, 181, 181, 1);
+                    font-weight: bold;
+                }
         .extra {
             width: 15%;
         }
